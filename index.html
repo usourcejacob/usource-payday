@@ -9,6 +9,16 @@ p {
   font-size: 60px;
   margin-top: 0px;
 }
+#gif-wrap {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-repeat: no-repeat;
+	background-position: center;
+}
 </style>
 </head>
 <body>
@@ -16,7 +26,8 @@ p {
     <h1 style="text-align: center">Days left before payday</h1>
 
 <p id="demo"></p>
-
+<div style="text-align: center"id="gif-wrap"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Mar 7, 2019 00:00:00").getTime();
@@ -46,6 +57,63 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+</script>
+<script>
+$(document).ready(function() {
+	// Initiate gifLoop for set interval
+	var refresh;
+	// Duration count in seconds
+	const duration = 1000 * 10;
+	// Giphy API defaults
+	const giphy = {
+		baseURL: "https://api.giphy.com/v1/gifs/",
+		key: "dc6zaTOxFJmzC",
+		tag: "cash",
+		type: "random",
+		rating: "pg-13"
+	};
+	// Target gif-wrap container
+	const $gif_wrap = $("#gif-wrap");
+	// Giphy API URL
+	let giphyURL = encodeURI(
+		giphy.baseURL +
+			giphy.type +
+			"?api_key=" +
+			giphy.key +
+			"&tag=" +
+			giphy.tag +
+			"&rating=" +
+			giphy.rating
+	);
+
+	// Call Giphy API and render data
+	var newGif = () => $.getJSON(giphyURL, json => renderGif(json.data));
+
+	// Display Gif in gif wrap container
+	var renderGif = _giphy => {
+		// Set gif as bg image
+		$gif_wrap.css({
+			"background-image": 'url("' + _giphy.image_original_url + '")'
+		});
+
+		// Start duration countdown
+		refreshRate();
+	};
+
+	// Call for new gif after duration
+	var refreshRate = () => {
+		// Reset set intervals
+		clearInterval(refresh);
+		refresh = setInterval(function() {
+			// Call Giphy API for new gif
+			newGif();
+		}, duration);
+	};
+
+	// Call Giphy API for new gif
+	newGif();
+});
+
 </script>
 
 </body>
