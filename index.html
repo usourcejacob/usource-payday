@@ -13,27 +13,36 @@
 
 		body {
 			min-height: 900px;
+			font-family: 'Sniglet', cursive !important;
 		}
 
 		#gif-wrap {
-			position: absolute;
-			top: 250px;
-			bottom: 0;
-			left: 0;
-			right: 0;
-
+			width: 100%;
+			height: 350px;
 			background-repeat: no-repeat;
 			background-position: center;
+			text-align: center;
 		}
 	</style>
+	<link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="skeleton.css">
 </head>
 
 <body>
 
-	<h1 style="text-align: center">Days left before payday</h1>
+	<div class="container">
+		<div class="row">
+			<div class="five columns">
+				<h1 style="text-align: center; margin-top: 120px;">Days left before payday</h1>
+				<p id="demo"></p>
+			</div>
+			<div class="five columns">
+				<div id="gif-wrap" style="margin-top: 100px;"></div>
+			</div>
+		</div>
+	</div>
 
-	<p id="demo"></p>
-	<div style="text-align: center" id="gif-wrap"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		// Set the date we're counting down to
@@ -105,7 +114,8 @@
 				// Set gif as bg image
 				$gif_wrap.css({
 					"background-image": 'url("' + _giphy.image_original_url + '")',
-					"min-height" : 'auto'
+					"min-height" : 'auto',
+					"width" : '600px'
 				});
 
 				// Start duration countdown
