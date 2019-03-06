@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Days left before pay day!</title>
+<title id="demotitle">Days left before pay day!</title>
 <style>
 p {
   text-align: center;
@@ -53,11 +53,14 @@ var x = setInterval(function() {
   // Output the result in an element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
+
+	document.getElementById("demotitle").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s before payday";
     
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("demo").innerHTML = "It\'s PAYDAY!!!";
   }
 }, 1000);
 </script>
