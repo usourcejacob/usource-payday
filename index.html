@@ -17,7 +17,7 @@
 
 		#gif-wrap {
 			position: absolute;
-			top: 350px;
+			top: 250px;
 			bottom: 0;
 			left: 0;
 			right: 0;
@@ -33,7 +33,6 @@
 	<h1 style="text-align: center">Days left before payday</h1>
 
 	<p id="demo"></p>
-	<p style="text-align: center"><button onclick="notifyMe()">Notify me!</button></p>
 	<div style="text-align: center" id="gif-wrap"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
@@ -80,7 +79,7 @@
 			const giphy = {
 				baseURL: "https://api.giphy.com/v1/gifs/",
 				key: "dc6zaTOxFJmzC",
-				tag: "cash",
+				tag: "cash, money, payday",
 				type: "random",
 				rating: "pg-13"
 			};
@@ -105,7 +104,8 @@
 			var renderGif = _giphy => {
 				// Set gif as bg image
 				$gif_wrap.css({
-					"background-image": 'url("' + _giphy.image_original_url + '")'
+					"background-image": 'url("' + _giphy.image_original_url + '")',
+					"min-height" : 'auto'
 				});
 
 				// Start duration countdown
