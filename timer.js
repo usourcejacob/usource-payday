@@ -1,5 +1,7 @@
-		// Set the date we're counting down to
-		var countDownDate = new Date("Mar 7, 2019 10:00:00").getTime();
+        // Set the date we're counting down to
+        var date = new Date("Mar 7, 2019 10:00:00");
+        var countDownDate = date.getTime();
+        document.getElementById("paydate").innerHTML = date.;
 
 		// Update the count down every 1 second
 		var x = setInterval(function () {
