@@ -31,6 +31,7 @@
 				document.getElementById("demotitle").innerHTML = "It\'s PAYDAY!!!";
 
 				document.getElementById("demo").innerHTML = "It\'s PAYDAY!!!";
+				document.getElementById("heading").innerHTML = "Rejoice!!!";
 				var notification = new Notification("You'll be notified on payday");
 			}
 		}, 1000);
