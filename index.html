@@ -23,6 +23,13 @@
 			background-position: center;
 			text-align: center;
 		}
+
+		canvas {
+
+			width: 100%;
+			margin: 0;
+
+		}
 	</style>
 	<link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
 	<link rel="stylesheet" href="normalize.css">
@@ -31,24 +38,30 @@
 </head>
 
 <body>
+		<canvas id="canvas" style="position:fixed; top:0;left:0">
 
-	<div class="container">
-		<div class="row">
-			<div class="six columns" style="text-align: center">
-				<h1 style="text-align: center; margin-top: 120px;" id="heading">Days left before payday</h1>
-				<p id="demo"></p>
-				<small  style="text-align: center" id="paydate"></small	>
+		</canvas>
+		<div class="container">
+				<div class="row">
+		
+					<div class="six columns" style="text-align: center">
+						
+						<h1 style="text-align: center; margin-top: 120px;" id="heading">Days left before payday</h1>
+						<p id="demo"></p>
+						<small style="text-align: center" id="paydate"></small>
+					</div>
+					<div class="five columns">
+						<div id="gif-wrap" style="margin-top: 100px;"></div>
+					</div>
+				</div>
 			</div>
-			<div class="five columns">
-				<div id="gif-wrap" style="margin-top: 100px;"></div>
-			</div>
-		</div>
-	</div>
+
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="timer.js"></script>
 	<script src="giphy.js"></script>
 	<script src="notify.js"></script>
+	<script src="confetti.js"></script>
 
 </body>
 
