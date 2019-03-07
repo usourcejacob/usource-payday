@@ -3,10 +3,10 @@
 	var currentMonth = new Date().getMonth();
 	var date;
 	if (new Date().getDate() == 7) {
-		date =  = new Date(months[currentMonth]+" 7, 2019 10:00:00");
+		date = new Date(months[currentMonth]+" 7, 2019 10:00:00");
 	}
 	if (new Date().getDate() != 7) {
-		date =  = new Date(months[currentMonth + 1]+" 7, 2019 10:00:00");
+		date = new Date(months[currentMonth + 1]+" 7, 2019 10:00:00");
 	}
         
         var countDownDate = date.getTime();
