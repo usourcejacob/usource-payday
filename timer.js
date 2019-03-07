@@ -32,6 +32,10 @@
 
 				document.getElementById("demo").innerHTML = "It\'s PAYDAY!!!";
 				document.getElementById("heading").innerHTML = "Rejoice!!!";
+				document.getElementById("canvas").style.visibility = "visible";
 				var notification = new Notification("You'll be notified on payday");
+			}
+			else {
+				document.getElementById("canvas").style.visibility = "hidden";
 			}
 		}, 1000);
