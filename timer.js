@@ -1,5 +1,14 @@
         // Set the date we're counting down to
-        var date = new Date("Mar 7, 2019 10:00:00");
+	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	var currentMonth = new Date().getMonth();
+	var date;
+	if (new Date().getDate() == 7) {
+		date =  = new Date(months[currentMonth]+" 7, 2019 10:00:00");
+	}
+	if (new Date().getDate() != 7) {
+		date =  = new Date(months[currentMonth + 1]+" 7, 2019 10:00:00");
+	}
+        
         var countDownDate = date.getTime();
         document.getElementById("paydate").innerHTML = date;
 
