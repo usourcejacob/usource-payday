@@ -74,6 +74,8 @@
 			// If the count down is over, write some text 
 			if (distance < 0) {
 				clearInterval(x);
+				document.getElementById("demotitle").innerHTML = "It\'s PAYDAY!!!";
+
 				document.getElementById("demo").innerHTML = "It\'s PAYDAY!!!";
 				var notification = new Notification("You'll be notified on payday");
 			}
