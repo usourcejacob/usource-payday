@@ -1,5 +1,15 @@
-        // Set the date we're counting down to
-        var date = new Date("Mar 7, 2019 10:00:00");
+		// Set the date we're counting down to
+		var month = new Date().getMonth();
+		var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+		console.log(new Date().getDate());
+		var date = null;
+		if ( new Date().getDate() == 7) {
+			date = new Date(months[month]+" 7, 2019 10:00:00")
+		}
+		if (new Date().getDate() != 7) {
+			date = new Date(months[month + 1]+" 7, 2019 10:00:00")
+		}
+        
         var countDownDate = date.getTime();
         document.getElementById("paydate").innerHTML = date;
 
@@ -37,5 +47,6 @@
 			}
 			else {
 				document.getElementById("canvas").style.visibility = "hidden";
+
 			}
 		}, 1000);
