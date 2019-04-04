@@ -7,7 +7,7 @@ $(document).ready(function () {
     const giphy = {
         baseURL: "https://api.giphy.com/v1/gifs/",
         key: "dc6zaTOxFJmzC",
-        tag: "money",
+        tag: "money, celebration",
         type: "random",
         rating: "pg-13"
     };
