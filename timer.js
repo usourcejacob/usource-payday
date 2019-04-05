@@ -1,6 +1,11 @@
         // Set the date we're counting down to
 	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	var currentMonth = new Date().getMonth();
+	console.log(new Date().getDate())
+	if(new Date().getDate() > 5) {
+		
+		currentMonth += 1;
+	}
 	var date  = new Date(months[currentMonth]+" 5, 2019 10:00:00");
 
         
