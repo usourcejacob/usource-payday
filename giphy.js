@@ -6,8 +6,8 @@ $(document).ready(function () {
     // Giphy API defaults
     const giphy = {
         baseURL: "https://api.giphy.com/v1/gifs/",
-        key: "dc6zaTOxFJmzC",
-        tag: "money, celebration",
+        key: "ABHMsqvQLAebkeRZ4ZdHPrUzkCxEKTJq",
+        tag: "money",
         type: "random",
         rating: "pg-13"
     };
